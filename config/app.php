@@ -166,6 +166,8 @@ return [
          * Package Service Providers...
          */
         Creativeorange\Gravatar\GravatarServiceProvider::class,
+        Cmgmyr\Messenger\MessengerServiceProvider::class,
+
         /*
          * Application Service Providers...
          */

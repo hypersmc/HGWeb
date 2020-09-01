@@ -23,6 +23,15 @@ class RouteServiceProvider extends ServiceProvider
      */
     public const HOME = '/home';
 
+
+    /**
+     * the path to the "userSettings" route for your application
+     *
+     * @var string
+     */
+    public const USERSETTINGS = '/usersettings';
+
+
     /**
      * Define your route model bindings, pattern filters, etc.
      *

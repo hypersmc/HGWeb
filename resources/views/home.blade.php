@@ -14,38 +14,91 @@
 
     <!-- Sidebar/menu -->
     <nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
-        <div class="w3-container w3-row">
+        <div class="w3-container 3-row">
             <div class="w3-col s4">
                 <img src="{{{Gravatar::get(Auth::user()->email) }}}" class="w3-circle w3-margin-right" style="width:46px">
             </div>
+
+
             <div class="w3-col s8 w3-bar">
                 <span>Welcome, <strong>{{{ isset(Auth::user()->name) ? Auth::user()->name : Auth::user()->email }}}</strong></span><br>
-                <div>
-                    <a href="#" class="w3-bar-item w3-button"><i class="fa fa-user"></i></a>
-                </div>
-                <div>
-                    <a href="#" class="w3-bar-item w3-button"><i class="fa fa-cog"></i></a>
-                </div>
-                <div>
-
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        <i class="fa fa-envelope"></i>
-                    </a>
-
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ route('logout') }}"
-                           onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                            {{ __('Logout') }}
+                <div >
+                    <div>
+                        <a id="navbarDropdown" class="nav-item w3-bar-item dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <i class="fa fa-user"></i>
                         </a>
 
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                            @csrf
-                        </form>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                                         document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+                            <a class="dropdown-item" href="" onclick="event.preventDefault(); document.getElementById('usersettings').submit();">
+                                {{__('usersettings')}}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                            <form id="usersettings" action="{{ route('usersettings') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </div>
                     </div>
 
-                </div>
+                    <div>
 
+                        <a id="navbarDropdown" class="nav-item w3-bar-item dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <i class="fa fa-envelope"></i>
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        @if (Auth::user()->newThreadsCount() > 0)
+                            <a class="dropdown-item" href="{{ route('messages') }}"
+                               onclick="event.preventDefault(); document.getElementById('beskeder').submit();">
+                                {{__('messages')}} ({{Auth::user()->newThreadsCount()}})
+                            </a>
+                            <form id="beskeder" action="{{ route('messages') }}" method="GET" class="d-none">
+                                @csrf
+                            </form>
+                        @else
+                                <a class="dropdown-item" href="{{ route('messages') }}"
+                                   onclick="event.preventDefault(); document.getElementById('beskeder').submit();">
+                                    {{__('messages')}}
+                                </a>
+                                <form id="beskeder" action="{{ route('messages') }}" method="GET" class="d-none">
+                                    @csrf
+                                </form>
+                        @endif
+                        </div>
+                    </div>
+                    <div>
+
+                        <a id="navbarDropdown" class="nav-item w3-bar-item dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <i class="fa fa-cog"></i>
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-left td" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                                         document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+                            <a class="dropdown-item" href="" onclick="event.preventDefault(); document.getElementById('usersettings').submit();">
+                                {{__('usersettings')}}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                            <form id="usersettings" action="{{ route('usersettings') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
             </div>
         </div>
         <hr>
