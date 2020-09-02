@@ -7,18 +7,21 @@ use Illuminate\Auth\Notifications\ResetPassword;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use MichaelDzjap\TwoFactorAuth\TwoFactorAuthenticable;
+
 
 class User extends Authenticatable
 {
     use Notifiable;
     use Messagable;
+    use Notifiable, TwoFactorAuthenticable;
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'mobile',
     ];
 
     /**
