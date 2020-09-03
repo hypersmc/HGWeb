@@ -4,24 +4,22 @@ namespace App;
 
 use Cmgmyr\Messenger\Traits\Messagable;
 use Illuminate\Auth\Notifications\ResetPassword;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use MichaelDzjap\TwoFactorAuth\TwoFactorAuthenticable;
 
 
 class User extends Authenticatable
 {
     use Notifiable;
     use Messagable;
-    use Notifiable, TwoFactorAuthenticable;
+    use Notifiable;
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'mobile',
+        'name', 'email', 'password', 'two_factor_code', 'two_factor_expires_at',
     ];
 
     /**
@@ -41,8 +39,27 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    protected $dates = [
+        'two_factor_expires_at',
+    ];
     public function sendPasswordResetNotification($token)
     {
         $this->notify(new ResetPassword($token));
+    }
+    public function generateTwoFactorCode()
+    {
+        $this->timestamps = false;
+        $this->two_factor_code = rand(100000, 999999);
+        $this->two_factor_expires_at = now()->addMinutes(10);
+        $this->save();
+    }
+
+    public function resetTwoFactorCode()
+    {
+        $this->timestamps = false;
+        $this->two_factor_code = null;
+        $this->two_factor_expires_at = null;
+        $this->save();
     }
 }

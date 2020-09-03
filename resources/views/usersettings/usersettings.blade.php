@@ -52,6 +52,7 @@
                         <strong><i class="fa fa-fw fa-clock-o"></i></strong> {{ round(microtime(true) - LARAVEL_START, 3) }}s
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
