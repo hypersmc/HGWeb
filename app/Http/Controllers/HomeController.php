@@ -17,6 +17,8 @@ class HomeController extends Controller
         $user = auth()->user();
         if (!$user->accepted){
             return view('home');
+        }else if ($user->accepted) {
+            return redirect('login');
         }else{
             return redirect('verify');
         }

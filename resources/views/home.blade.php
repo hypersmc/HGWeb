@@ -3,7 +3,7 @@
 @section('content')
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
@@ -106,16 +106,15 @@
             <h5>Dashboard</h5>
         </div>
         <div class="w3-bar-block">
-            <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>&nbsp; Close Menu</a>
-            <a href="#" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-users fa-fw"></i>&nbsp; Overview</a>
-            <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>&nbsp; Views</a>
-            <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>&nbsp; Traffic</a>
-            <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bullseye fa-fw"></i>&nbsp; Geo</a>
-            <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-diamond fa-fw"></i>&nbsp; Orders</a>
-            <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bell fa-fw"></i>&nbsp; News</a>
-            <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bank fa-fw"></i>&nbsp; General</a>
-            <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-history fa-fw"></i>&nbsp; History</a>
-            <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>&nbsp; Settings</a><br><br>
+            <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
+            <a href="{{'home'}}" class="w3-bar-item w3-button w3-padding  w3-blue"><i class="fa fa-users fa-fw"></i>  Overview</a>
+            <a href="{{'server'}}" class="w3-bar-item w3-button w3-padding"><i class="fa fa-server fa-fw"></i>  Server</a>
+            <a href="{{'reports'}}" class="w3-bar-item w3-button w3-padding"><i class="fa fa-flag-checkered fa-fw"></i>  Reports</a>
+            <a href="{{'hackerguardian'}}" class="w3-bar-item w3-button w3-padding"><i class="fa fa-shield fa-fw"></i>  HackerGuardian</a>
+            <a href="{{'chat'}}" class="w3-bar-item w3-button w3-padding"><i class="fa fa-comments fa-fw"></i>  Chat</a>
+            <a href="{{'logs'}}" class="w3-bar-item w3-button w3-padding"><i class="fa fa-address-book fa-fw"></i>  Logs</a>
+            <a href="{{'history'}}" class="w3-bar-item w3-button w3-padding"><i class="fa fa-history fa-fw"></i>  History</a>
+            <a href="{{'settings'}}" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>  Settings</a><br><br>
         </div>
     </nav>
 
@@ -136,10 +135,10 @@
                 <div class="w3-container w3-red w3-padding-16">
                     <div class="w3-left"><i class="fa fa-comment w3-xxxlarge"></i></div>
                     <div class="w3-right">
-                        <h3>52</h3>
+                        {{--<h3>{{\App\Http\Controllers\GetOnlinePlayersController::GetOnlinePlayers('panel.zennodes.dk', 25749)}} / 50</h3>--}}
                     </div>
                     <div class="w3-clear"></div>
-                    <h4>Messages</h4>
+                    <h4>OnlinePlayers</h4>
                 </div>
             </div>
             <div class="w3-quarter">
@@ -149,7 +148,7 @@
                         <h3>99</h3>
                     </div>
                     <div class="w3-clear"></div>
-                    <h4>Views</h4>
+                    <h4>Ban appels</h4>
                 </div>
             </div>
             <div class="w3-quarter">
@@ -159,7 +158,7 @@
                         <h3>23</h3>
                     </div>
                     <div class="w3-clear"></div>
-                    <h4>Shares</h4>
+                    <h4>Staff Online</h4>
                 </div>
             </div>
             <div class="w3-quarter">
@@ -169,7 +168,8 @@
                         <h3>50</h3>
                     </div>
                     <div class="w3-clear"></div>
-                    <h4>Users</h4>
+                    <h4>Reports
+                    </h4>
                 </div>
             </div>
         </div>
@@ -177,8 +177,10 @@
         <div class="w3-panel">
             <div class="w3-row-padding" style="margin:0 -16px">
                 <div class="w3-third">
-                    <h5>Regions</h5>
-                    <img src="/w3images/region.jpg" style="width:100%" alt="Google Regional Map">
+                    <h5>Mojang Service status</h5>
+                    <table class="w3-table w3-striped w3-white">
+                        {{\App\Http\Controllers\GetMojangServiceStatusController::MCStatus()}}
+                    </table>
                 </div>
                 <div class="w3-twothird">
                     <h5>Feeds</h5>
@@ -222,7 +224,7 @@
                 </div>
             </div>
         </div>
-        <hr>
+        <hr><!--
         <div class="w3-container">
             <h5>General Stats</h5>
             <p>New Visitors</p>
@@ -337,12 +339,12 @@
                     <p>Interests</p>
                 </div>
             </div>
-        </div>
+        </div>-->
+        <iframe src="https://panel.zennodes.dk/server/76d46cf8/console" ></iframe>
 
         <!-- Footer -->
         <footer class="w3-container w3-padding-16 w3-light-grey">
             <h4>FOOTER</h4>
-            <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
         </footer>
 
         <!-- End page content -->
