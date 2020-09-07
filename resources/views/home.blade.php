@@ -9,11 +9,11 @@
     <style>
         html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     </style>
-    <body class="w3-light-grey">
+    <body class="w3-dark-dark">
 
 
     <!-- Sidebar/menu -->
-    <nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+    <nav class="w3-sidebar w3-collapse w3-dark-bl w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
         <div class="w3-container 3-row">
             <div class="w3-col s4">
                 <img src="{{{Gravatar::get(Auth::user()->email) }}}" class="w3-circle w3-margin-right" style="width:46px">
@@ -135,7 +135,7 @@
                 <div class="w3-container w3-red w3-padding-16">
                     <div class="w3-left"><i class="fa fa-comment w3-xxxlarge"></i></div>
                     <div class="w3-right">
-                        {{--<h3>{{\App\Http\Controllers\GetOnlinePlayersController::GetOnlinePlayers('panel.zennodes.dk', 25749)}} / 50</h3>--}}
+                        <h3>{{\App\Http\Controllers\GetOnlinePlayersController::GetOnlinePlayers('panel.zennodes.dk', 25749)}} / 50</h3>
                     </div>
                     <div class="w3-clear"></div>
                     <h4>OnlinePlayers</h4>
@@ -340,14 +340,13 @@
                 </div>
             </div>
         </div>-->
-        <iframe src="https://panel.zennodes.dk/server/76d46cf8/console" ></iframe>
 
-        <!-- Footer -->
-        <footer class="w3-container w3-padding-16 w3-light-grey">
+        <!-- Footer
+        <footer class="w3-container w3-padding-16 w3-">
             <h4>FOOTER</h4>
         </footer>
 
-        <!-- End page content -->
+        End page content -->
     </div>
 
     <script>
@@ -400,4 +399,6 @@
     </div>
 </div>
 --}}
+@include('sweetalert::alert')
+
 @endsection

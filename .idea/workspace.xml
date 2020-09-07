@@ -19,16 +19,26 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1a4d6c0a-0628-452b-9cc0-e95a3ade6ac7" name="Default Changelist" comment="too much stuff">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/GetMojangServiceStatusController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/GetOnlinePlayersController.php" afterDir="false" />
+    <list default="true" id="1a4d6c0a-0628-452b-9cc0-e95a3ade6ac7" name="Default Changelist" comment="too much stuff + logo :D">
+      <change beforePath="$PROJECT_DIR$/.idea/blog.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/blog.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/TwoFactorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/TwoFactorController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/GetMojangServiceStatusController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/GetMojangServiceStatusController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/twoFactor.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/twoFactor.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/usersettings/usersettings.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/usersettings/usersettings.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,6 +174,7 @@
       <path value="$PROJECT_DIR$/vendor/phar-io/version" />
       <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
       <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/vendor/realrashid/sweet-alert" />
     </include_path>
   </component>
   <component name="ProjectId" id="1gs7lOixYmRHD6JldsdMhg5OZfO" />
@@ -183,13 +194,14 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Jesper\Desktop\HGWeb\resources\views\usersettings" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Jesper\Desktop\HGWeb\public" />
       <recent name="C:\Users\Jesper\Desktop\HGWeb\resources\views\usersettings" />
       <recent name="C:\Users\Jesper\Desktop\HGWeb\resources\views" />
       <recent name="C:\Users\Jesper\Desktop\HGWeb\app\Http\Controllers" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Jesper\Desktop\HGWeb\resources\views\usersettings" />
     </key>
   </component>
   <component name="RunManager">
@@ -210,7 +222,8 @@
       <workItem from="1598939826993" duration="20937000" />
       <workItem from="1599026047583" duration="10200000" />
       <workItem from="1599042424467" duration="23187000" />
-      <workItem from="1599139795158" duration="14617000" />
+      <workItem from="1599139795158" duration="14770000" />
+      <workItem from="1599458866718" duration="10901000" />
     </task>
     <task id="LOCAL-00001" summary="stuff">
       <created>1598964291188</created>
@@ -233,7 +246,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599139830356</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="too much stuff + logo :D">
+      <created>1599222514459</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1599222514459</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -254,9 +274,14 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="stuff" />
     <MESSAGE value="too much stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="too much stuff" />
+    <MESSAGE value="too much stuff + logo :D" />
+    <option name="LAST_COMMIT_MESSAGE" value="too much stuff + logo :D" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="690" y="335" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1599482106296">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state x="690" y="335" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1160@0.0.1920.1160" timestamp="1599482106296" />
     <state x="897" y="486" key="Github.ShareDialog" timestamp="1598892947058">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -296,22 +321,22 @@
     </state>
     <state x="461" y="225" key="SettingsEditor/0.0.1920.1160/1920.0.1920.1160@0.0.1920.1160" timestamp="1599051859698" />
     <state x="461" y="225" key="SettingsEditor/0.0.1920.1160@0.0.1920.1160" timestamp="1599042555135" />
-    <state x="552" y="309" key="Vcs.Push.Dialog.v2" timestamp="1599139834998">
+    <state x="552" y="309" key="Vcs.Push.Dialog.v2" timestamp="1599222520202">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="552" y="309" key="Vcs.Push.Dialog.v2/0.0.1920.1160/1920.0.1920.1160@0.0.1920.1160" timestamp="1599053357907" />
-    <state x="552" y="309" key="Vcs.Push.Dialog.v2/0.0.1920.1160@0.0.1920.1160" timestamp="1599139834998" />
+    <state x="552" y="309" key="Vcs.Push.Dialog.v2/0.0.1920.1160@0.0.1920.1160" timestamp="1599222520202" />
     <state x="777" y="484" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599041855992">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598893775744" />
     <state x="777" y="484" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1160@0.0.1920.1160" timestamp="1599041855992" />
-    <state x="667" y="133" width="585" height="894" key="find.popup" timestamp="1599198278107">
+    <state x="667" y="133" width="585" height="894" key="find.popup" timestamp="1599479052531">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="667" y="119" width="585" height="801" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598893126042" />
     <state x="1178" y="134" width="675" height="894" key="find.popup/0.0.1920.1160/1920.0.1920.1160@0.0.1920.1160" timestamp="1599053150711" />
-    <state x="667" y="133" width="585" height="894" key="find.popup/0.0.1920.1160@0.0.1920.1160" timestamp="1599198278107" />
+    <state x="667" y="133" width="585" height="894" key="find.popup/0.0.1920.1160@0.0.1920.1160" timestamp="1599479052531" />
     <state x="616" y="270" key="run.anything.popup" timestamp="1598962602382">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>

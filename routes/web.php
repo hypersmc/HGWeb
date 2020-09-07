@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
 
 // Get the currently authenticated user...
 $user = Auth::user();
@@ -30,8 +31,10 @@ Route::get('verify/resend', 'Auth\TwoFactorController@resend')->name('verify.res
 Route::resource('verify', 'Auth\TwoFactorController')->only(['index', 'store']);
 
 Route::get('/', function () {
+
     if (Auth::check() && Auth::user()->accepted) {
-        return redirect('verify');
+        Alert::success('Warning Title', 'Warning Message');
+        return view('verify');
     }else{
         return redirect('login');
     }

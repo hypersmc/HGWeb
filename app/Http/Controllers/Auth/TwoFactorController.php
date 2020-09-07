@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Notifications\TwoFactorCode;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class TwoFactorController extends Controller
 {
@@ -33,8 +34,10 @@ class TwoFactorController extends Controller
             $user->accepted = true;
             return redirect()->route('home');
         }
+        Alert::error('Oops...', 'That two factor code is invalid!');
 
-        return redirect()->back()->withErrors(['two_factor_code' => 'The two factor code you have entered does not match']);
+        return redirect()->back();
+
     }
 
     public function resend()
@@ -42,7 +45,7 @@ class TwoFactorController extends Controller
         $user = auth()->user();
         $user->generateTwoFactorCode();
         $user->notify(new TwoFactorCode());
-
-        return redirect()->back()->withMessage('The two factor code has been sent again');
+        Alert::info('New Two factor key', 'An new key has been send again');
+        return redirect()->back();
     }
 }

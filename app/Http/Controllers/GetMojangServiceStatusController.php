@@ -5,6 +5,7 @@
 namespace App\Http\Controllers;
 
 
+
 class GetMojangServiceStatusController
 {
 
@@ -22,6 +23,9 @@ class GetMojangServiceStatusController
             $dotcolor = array_values($address)[0];
             switch($colour)
             {
+                case 'minecraft.net':
+                    $dotcolor = 'dotyellow';
+                    break; //Do nothing, yellow is good
                 case 'green':
                     $colour = 'lightgreen';
                     $dotcolor = 'dotgreen';
@@ -32,12 +36,12 @@ class GetMojangServiceStatusController
                 case 'yellow':
                     $dotcolor = 'dotyellow';
                     break; //Do nothing, yellow is good
+
                 default:
                     $dotcolor = 'dot';
                     $colour = 'red';
                     break; //Something went wrong, assume it's down
             }
-
             echo "<tr><td><span>$server </span><span class='$dotcolor'></span> <br></td></tr>" . PHP_EOL;
         }
 

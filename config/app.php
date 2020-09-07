@@ -168,6 +168,8 @@ return [
         Creativeorange\Gravatar\GravatarServiceProvider::class,
         Cmgmyr\Messenger\MessengerServiceProvider::class,
         'App\Providers\ComposerServiceProvider',
+        RealRashid\SweetAlert\SweetAlertServiceProvider::class,
+
 
 
         /*
@@ -231,6 +233,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Gravatar' => Creativeorange\Gravatar\Facades\Gravatar::class,
+        'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
 
     ],
 

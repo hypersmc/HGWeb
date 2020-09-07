@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class HomeController extends Controller
 {
@@ -14,8 +15,12 @@ class HomeController extends Controller
      */
     public function index()
     {
+        if (session('logout')){
+            Alert::info('Logout', 'Your logout was successful');
+        }
         $user = auth()->user();
         if (!$user->accepted){
+            Alert::success('Login successful', 'Welcome!');
             return view('home');
         }else if ($user->accepted) {
             return redirect('login');

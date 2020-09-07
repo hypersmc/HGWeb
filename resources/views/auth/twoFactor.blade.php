@@ -50,6 +50,8 @@
             </div>
         </div>
     </div>
+    @include('sweetalert::alert')
+
 
     <form id="logoutform" action="{{ route('logout') }}" method="POST" style="display: none;">
         {{ csrf_field() }}

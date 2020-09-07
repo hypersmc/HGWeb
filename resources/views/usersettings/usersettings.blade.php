@@ -6,6 +6,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
+                    @csrf
                     <div class="card-header">{{ __('User Settings:') }}</div>
                     <div class="card-body">
                         <div class="form-group row">
@@ -48,7 +49,6 @@
                                 </button>
                             </div>
                         </div>
-                        <strong><i class="fa fa-fw {{ $appIsGit ? 'fa-git-square' : 'fa-code-fork' }}"></i></strong> {{ $appVersion }}<br />
                         <strong><i class="fa fa-fw fa-clock-o"></i></strong> {{ round(microtime(true) - LARAVEL_START, 3) }}s
                     </div>
                 </div>
