@@ -28,7 +28,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'remember_token', 'accepted', 'once',
     ];
 
     /**
@@ -60,6 +60,19 @@ class User extends Authenticatable
         $this->timestamps = false;
         $this->two_factor_code = null;
         $this->two_factor_expires_at = null;
+        $this->save();
+    }
+    public function setfunctions() {
+        $this->accepted = true;
+        $this->once = true;
+        $this->save();
+    }
+    public function setonce() {
+        $this->once = false;
+        $this->save();
+    }
+    public function setaccepted() {
+        $this->accepted = false;
         $this->save();
     }
 }

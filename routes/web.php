@@ -19,6 +19,7 @@ $id = Auth::id();
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['prefix' => 'messages'], function () {
     Route::get('/', ['as' => 'messages', 'uses' => 'MessagesController@index']);
@@ -32,14 +33,16 @@ Route::resource('verify', 'Auth\TwoFactorController')->only(['index', 'store']);
 
 Route::get('/', function () {
 
-    if (Auth::check() && Auth::user()->accepted) {
+    if (Auth::check()) {
+        return view('auth.twoFactor');
         Alert::success('Warning Title', 'Warning Message');
-        return view('verify');
+
     }else{
         return redirect('login');
     }
 });
 Route::post("/usersettings", 'UserSettingsController@index')->name('usersettings');
+Route::post("/home", 'Auth\LogoutController@index')->name('Logout2');
 
 Auth::routes();
 

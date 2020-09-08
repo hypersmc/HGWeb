@@ -3,6 +3,8 @@
 @section('content')
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="js/ting.js"></script>
+
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -29,16 +31,16 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('logout') }}"
+                            <a class="dropdown-item" href="{{ route('Logout2') }}"
                                onclick="event.preventDefault();
-                                                         document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
+                                                         document.getElementById('Logout2-form').submit();">
+                                {{ __('Logout2') }}
                             </a>
                             <a class="dropdown-item" href="" onclick="event.preventDefault(); document.getElementById('usersettings').submit();">
                                 {{__('usersettings')}}
                             </a>
 
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            <form id="Logout2-form" action="{{ route('Logout2') }}" method="POST" class="d-none">
                                 @csrf
                             </form>
                             <form id="usersettings" action="{{ route('usersettings') }}" method="POST" class="d-none">
@@ -125,7 +127,9 @@
     <!-- !PAGE CONTENT! -->
     <div class="w3-main" style="margin-left:300px;margin-top:43px;">
 
-        <!-- Header -->
+        <!-- Header --><button class="btn btn-danger" id="delete_me">
+            Delete
+        </button>
         <header class="w3-container" style="padding-top:22px">
             <h5><b><i class="fa fa-dashboard"></i> My Dashboard</b></h5>
         </header>
@@ -135,7 +139,7 @@
                 <div class="w3-container w3-red w3-padding-16">
                     <div class="w3-left"><i class="fa fa-comment w3-xxxlarge"></i></div>
                     <div class="w3-right">
-                        <h3>{{\App\Http\Controllers\GetOnlinePlayersController::GetOnlinePlayers('panel.zennodes.dk', 25749)}} / 50</h3>
+                       {{-- <h3>{{\App\Http\Controllers\GetOnlinePlayersController::GetOnlinePlayers('panel.zennodes.dk', 25749)}} / 50</h3>--}}
                     </div>
                     <div class="w3-clear"></div>
                     <h4>OnlinePlayers</h4>
@@ -341,12 +345,12 @@
             </div>
         </div>-->
 
-        <!-- Footer
+        <!-- Footer-->
         <footer class="w3-container w3-padding-16 w3-">
-            <h4>FOOTER</h4>
+            <strong><i class="fa fa-fw fa-clock-o"></i></strong> {{ round(microtime(true) - LARAVEL_START, 3) }}s
+
         </footer>
 
-        End page content -->
     </div>
 
     <script>
@@ -373,6 +377,7 @@
             overlayBg.style.display = "none";
         }
     </script>
+
 
 
 

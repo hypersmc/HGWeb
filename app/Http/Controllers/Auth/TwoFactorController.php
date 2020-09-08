@@ -9,7 +9,6 @@ use RealRashid\SweetAlert\Facades\Alert;
 
 class TwoFactorController extends Controller
 {
-    public $accepted = false;
     public function __construct()
     {
         $this->middleware(['auth', 'twofactor']);
@@ -31,7 +30,7 @@ class TwoFactorController extends Controller
         if($request->input('two_factor_code') == $user->two_factor_code)
         {
             $user->resetTwoFactorCode();
-            $user->accepted = true;
+            $user->setfunctions();
             return redirect()->route('home');
         }
         Alert::error('Oops...', 'That two factor code is invalid!');

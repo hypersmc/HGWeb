@@ -4,6 +4,8 @@
 namespace App\Http\Controllers;
 
 
+use Throwable;
+
 class GetOnlinePlayersController
 {
     public static function GetOnlinePlayers($ip, $port = 25749) {
@@ -15,8 +17,20 @@ class GetOnlinePlayersController
 
         // Create a CURL connection to the API.
         $ch = curl_init('https://mcapi.us/server/status?ip='.$ip.'&port='.$port);
+
+        if (!$ch) {
+            return 0;
+        }
+        if (!curl_setopt($ch, CURLOPT_RETURNTRANSFER, true)) {
+            return 0;
+        }
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        if (!curl_exec($ch)) {
+            return 0;
+        }
         $results = curl_exec($ch);
+
+
         curl_close($ch);
 
         // Unserialize the JSON output

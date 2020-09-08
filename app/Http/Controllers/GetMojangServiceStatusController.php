@@ -23,9 +23,6 @@ class GetMojangServiceStatusController
             $dotcolor = array_values($address)[0];
             switch($colour)
             {
-                case 'minecraft.net':
-                    $dotcolor = 'dotyellow';
-                    break; //Do nothing, yellow is good
                 case 'green':
                     $colour = 'lightgreen';
                     $dotcolor = 'dotgreen';
