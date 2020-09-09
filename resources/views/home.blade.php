@@ -3,8 +3,6 @@
 @section('content')
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script type="text/javascript" src="js/ting.js"></script>
-
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -127,9 +125,7 @@
     <!-- !PAGE CONTENT! -->
     <div class="w3-main" style="margin-left:300px;margin-top:43px;">
 
-        <!-- Header --><button class="btn btn-danger" id="delete_me">
-            Delete
-        </button>
+        <!-- Header -->
         <header class="w3-container" style="padding-top:22px">
             <h5><b><i class="fa fa-dashboard"></i> My Dashboard</b></h5>
         </header>
@@ -228,7 +224,11 @@
                 </div>
             </div>
         </div>
-        <hr><!--
+        <hr>
+
+
+
+        <!--
         <div class="w3-container">
             <h5>General Stats</h5>
             <p>New Visitors</p>
@@ -377,7 +377,6 @@
             overlayBg.style.display = "none";
         }
     </script>
-
 
 
 

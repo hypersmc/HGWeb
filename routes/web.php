@@ -34,15 +34,14 @@ Route::resource('verify', 'Auth\TwoFactorController')->only(['index', 'store']);
 Route::get('/', function () {
 
     if (Auth::check()) {
-        return view('auth.twoFactor');
         Alert::success('Warning Title', 'Warning Message');
-
+        return view('auth.twoFactor');
     }else{
         return redirect('login');
     }
 });
 Route::post("/usersettings", 'UserSettingsController@index')->name('usersettings');
 Route::post("/home", 'Auth\LogoutController@index')->name('Logout2');
-
+Route::get('/API/Apirequest', 'API\apicontroller@index');
 Auth::routes();
 

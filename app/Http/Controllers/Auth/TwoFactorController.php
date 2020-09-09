@@ -16,6 +16,12 @@ class TwoFactorController extends Controller
 
     public function index()
     {
+        $user = auth()->user();
+        if ($user->once) {
+            Alert::info('two factor key', 'An two factor key has been send to your mail.');
+            $user->setonce();
+            return view('auth.twoFactor');
+        }
         return view('auth.twoFactor');
     }
 

@@ -13,6 +13,12 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/ting.js') }}" defer></script>
+
+    <script src="sweetalert2/dist/sweetalert2.all.min.js"></script>
+
+    <!-- Include a polyfill for ES6 Promises (optional) for IE11 -->
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.js"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -65,6 +71,7 @@
                                 </div>
                             </li>
                         @endguest
+
                     </ul>
                 </div>
             </div>

@@ -27,7 +27,9 @@
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <?php
+                                            Alert::error('Oops...', 'These credentials do not match our records.');
+                                        ?>
                                     </span>
                                 @enderror
                             </div>
@@ -41,7 +43,9 @@
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <?php
+                                            Alert::error('Oops...', 'These credentials do not match our records.');
+                                        ?>
                                     </span>
                                 @enderror
                             </div>

@@ -62,11 +62,20 @@ class User extends Authenticatable
         $this->two_factor_expires_at = null;
         $this->save();
     }
+
+
+
     public function setfunctions() {
         $this->accepted = true;
         $this->once = true;
         $this->save();
     }
+
+    public function setonce2() {
+        $this->once = true;
+        $this->save();
+    }
+
     public function setonce() {
         $this->once = false;
         $this->save();

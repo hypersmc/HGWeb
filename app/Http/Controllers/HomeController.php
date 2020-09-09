@@ -17,17 +17,18 @@ class HomeController extends Controller
     public function index()
     {
         $user = auth()->user();
-        if ($user->accepted){
-            if ($user->once) {
-                Alert::success('Login successful', 'Welcome!');
-                $user->setonce();
+        try {
+
+            if ($user->accepted) {
+                if ($user->once) {
+                    Alert::success('Login successful', 'Welcome!');
+                    $user->setonce();
+                    return view('home');
+                }
                 return view('home');
             }
-            return view('home');
-        }else if (!$user->accepted) {
+        } catch (\Throwable $e) {
             return redirect('login');
-        }else{
-            return view('auth.twoFactor');
         }
     }
 }
